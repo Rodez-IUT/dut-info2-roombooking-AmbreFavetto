@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+           targetNamespace="http://xmlws.roombooking/rb/schema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:rb="http://xmlws.roombooking/rb/schema">
+  <xs:element name="roombooking" type="rb:roombookingType"/>
+  <xs:complexType name="roomType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="label"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="userType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="username"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="bookingType">
+    <xs:sequence>
+      <xs:element type="xs:dateTime" name="startDate"/>
+      <xs:element type="xs:dateTime" name="endDate"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="roombookingType">
+    <xs:all>
+      <xs:element type="rb:roomType" name="room" />
+      <xs:element type="rb:userType" name="user"/>
+      <xs:element type="rb:bookingType" name="booking"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>

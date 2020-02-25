@@ -1,0 +1,12 @@
+<roomBookingRequest xmlns="http://xmlws.roombooking/rb/schema">
+    <room >
+        <label>B603</label>
+    </room>
+    <user>
+        <username>KateHudson</username>
+    </user>
+    <booking>
+        <startDate>2019-02-01T08:00:00</startDate>
+        <endDate>2019-02-01T10:00:00</endDate>
+    </booking>
+</roomBookingRequest>
