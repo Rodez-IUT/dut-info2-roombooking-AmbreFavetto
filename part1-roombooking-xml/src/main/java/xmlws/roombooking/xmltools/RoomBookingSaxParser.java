@@ -11,18 +11,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class RoomBookingSaxParser implements RoomBookingParser {
-    private RoomBooking rb = null;
 
     @Override
     public RoomBooking parse(InputStream inputStream) {
-
+        RoomBooking rb = new RoomBooking();
         try {
-            rb = new RoomBooking();
             SAXParserFactory spf = SAXParserFactory.newInstance();
             spf.setNamespaceAware(true);
             SAXParser saxParser = spf.newSAXParser();
-            saxParser.parse(inputStream, new RoomBookingHandler());
-           
+            saxParser.parse(inputStream, new RoomBookingHandler(rb));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -30,8 +27,13 @@ public class RoomBookingSaxParser implements RoomBookingParser {
     }
 
     private class RoomBookingHandler extends DefaultHandler {
+        private RoomBooking rb;
 
+        public RoomBookingHandler(RoomBooking rb) {
+            this.rb = rb;
+        }
         public String balise = "";
+
         public void startElement(String namespaceURI,
                                  String localName,
                                  String qName,
