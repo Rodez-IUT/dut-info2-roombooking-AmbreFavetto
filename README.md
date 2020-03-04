@@ -1,7 +1,7 @@
 # API XML - Web Services 
 
-### NOM : DOE
-### Prénom : John
+### NOM : FAVETTO
+### Prénom : Ambre
 ### Groupe de TP : 
 - [x] 1
 
