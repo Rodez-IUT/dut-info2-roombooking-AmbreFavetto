@@ -6,6 +6,7 @@ public class RoomBookingSaxParser implements RoomBookingParser {
 
     @Override
     public RoomBooking parse(InputStream inputStream) {
+
         return null;
     }
 }
